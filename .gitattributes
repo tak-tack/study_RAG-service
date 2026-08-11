@@ -1,2 +1,5 @@
-/mvnw text eol=lf
-*.cmd text eol=crlf
+# Keep source files consistently portable across development environments.
+*.py text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
