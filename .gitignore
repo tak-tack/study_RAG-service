@@ -2,6 +2,8 @@ __pycache__/
 *.py[cod]
 *.so
 .venv/
+.venv-win/
+*.egg-info/
 .env
 .pytest_cache/
 .mypy_cache/
