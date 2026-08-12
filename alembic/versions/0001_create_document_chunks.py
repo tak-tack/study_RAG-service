@@ -1,4 +1,8 @@
-"""Create the pgvector-backed document chunk table."""
+"""[과거 로컬 프로토타입] ``document_chunks`` 테이블을 생성한 초기 이력입니다.
+
+현재 외부 ``chatbot`` 스키마에서는 다른 시스템의 동명 테이블과 충돌할 수 있으므로
+실행하지 않습니다. 외부 배포는 0005로 stamp한 뒤 0006만 적용합니다.
+"""
 
 import sqlalchemy as sa
 

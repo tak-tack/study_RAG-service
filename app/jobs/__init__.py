@@ -1,1 +1,5 @@
-"""Scheduled batch jobs."""
+"""수동 또는 스케줄 기반 배치 작업 패키지입니다.
+
+현재 ``finlife_company_sync``를 제공하며 Windows 작업 스케줄러 등록 스크립트가 이를
+호출합니다.
+"""

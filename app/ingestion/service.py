@@ -1,3 +1,9 @@
+"""금융회사 수집 결과를 원본·청크·벡터 테이블에 적재하는 서비스입니다.
+
+``app.ingestion.finlife``의 문서를 받아 ``app.ingestion.text``로 정제·청킹하고,
+Ollama와 ``app.db.models``를 통해 pgvector 저장까지 하나의 트랜잭션으로 처리합니다.
+"""
+
 from dataclasses import dataclass
 
 from langchain_ollama import OllamaEmbeddings

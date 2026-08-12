@@ -1,3 +1,9 @@
+"""금융감독원 Finlife ``companySearch`` API의 페이지 단위 클라이언트입니다.
+
+``app.core.config``에서 인증·권역 설정을 받고, ``app.jobs.finlife_company_sync``에
+정규화된 ``SourceDocument`` 목록을 전달합니다.
+"""
+
 from dataclasses import dataclass
 from typing import Any
 

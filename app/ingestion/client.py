@@ -1,3 +1,9 @@
+"""일반 외부 REST 응답에서 텍스트 문서를 추출하는 클라이언트입니다.
+
+``app.ingestion.finlife``가 JSON 배열을 ``SourceDocument``로 변환할 때 재사용하며,
+향후 다른 REST 기반 수집기도 이 모듈의 문서 형식을 사용합니다.
+"""
+
 from __future__ import annotations
 
 import json

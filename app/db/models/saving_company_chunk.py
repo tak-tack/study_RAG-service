@@ -1,3 +1,9 @@
+"""금융회사 텍스트 청크와 bge-m3 벡터를 저장하는 ORM 모델입니다.
+
+``SavingCompany``의 ``id``를 FK로 참조하며, ``app.ingestion.service``가
+LangChain 청킹 및 Ollama 임베딩 결과를 이 테이블에 저장합니다.
+"""
+
 from datetime import datetime
 from typing import TYPE_CHECKING
 

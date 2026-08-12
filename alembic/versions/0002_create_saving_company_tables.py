@@ -1,4 +1,8 @@
-"""Create normalized financial-company and company-chunk tables."""
+"""[과거 로컬 프로토타입] 금융회사·청크 테이블 최초 생성 이력입니다.
+
+0001의 로컬 ``document_chunks``에 의존하므로 공유 외부 DB에는 적용하지 않습니다.
+현재 외부 배포용 테이블 생성은 0006 마이그레이션이 담당합니다.
+"""
 
 import sqlalchemy as sa
 

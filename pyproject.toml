@@ -1,3 +1,5 @@
+# Python 패키지·의존성 정의입니다. FastAPI 진입점은 ``app.main``, 배치 진입점은
+# ``app.jobs.finlife_company_sync``이며 각 모듈이 아래 런타임 라이브러리를 사용합니다.
 [build-system]
 requires = ["setuptools>=75"]
 build-backend = "setuptools.build_meta"

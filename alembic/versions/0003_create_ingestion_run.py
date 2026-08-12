@@ -1,4 +1,8 @@
-"""Create scheduled-ingestion run audit table."""
+"""[과거 로컬 프로토타입] ``ingestion_run`` 실행 로그 테이블 생성 이력입니다.
+
+이 테이블은 0005에서 ``takhyeong_saving_log``로 이름이 변경됐으며, 외부 DB에서는
+0006이 현재 로그 테이블을 직접 생성합니다.
+"""
 
 import sqlalchemy as sa
 

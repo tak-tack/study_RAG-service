@@ -1,3 +1,9 @@
+"""환경 변수 기반 런타임 설정 모듈입니다.
+
+``.env``의 DB·Ollama·금감원 API 값을 읽어 ``app.db.session``,
+``app.ingestion.finlife``, ``app.ingestion.service`` 및 배치 작업에 제공합니다.
+"""
+
 from functools import lru_cache
 from urllib.parse import parse_qs, urlparse, urlunparse
 

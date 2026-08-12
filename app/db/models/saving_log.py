@@ -1,3 +1,8 @@
+"""수동·스케줄 수집 실행 이력을 ``takhyeong_saving_log``에 매핑합니다.
+
+``app.jobs.finlife_company_sync``가 시작·성공·실패 상태와 처리 건수를 기록합니다.
+"""
+
 from datetime import datetime
 
 from sqlalchemy import BigInteger, DateTime, Identity, Integer, String, Text, func

@@ -1,3 +1,9 @@
+"""금융감독원 회사 정보를 주기적으로 수집·임베딩·저장하는 배치 진입점입니다.
+
+Windows 작업 스케줄러는 ``scripts/register-finlife-sync-task.ps1``을 통해 이 모듈을
+``--trigger scheduled``로 실행합니다. 수동 실행도 가능하며 결과는 로그 테이블에 남습니다.
+"""
+
 import argparse
 from datetime import UTC, datetime
 

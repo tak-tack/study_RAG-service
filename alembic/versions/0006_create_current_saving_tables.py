@@ -1,4 +1,8 @@
-"""Create the current saving-company tables without touching shared legacy tables.
+"""현재 외부 ``chatbot`` 스키마용 금융회사 테이블을 생성하는 마이그레이션입니다.
+
+``app.db.models``의 ``takhyeong_saving_company``, 청크, 로그 모델과 대응하며,
+공유 ``document_chunks``를 수정하지 않습니다. ``alembic/env.py``에서 전용 이력
+테이블을 사용해 이 마이그레이션을 안전하게 적용합니다.
 
 The earlier revisions represent the local prototype's history.  A shared
 `chatbot` schema can already contain an unrelated `document_chunks` table, so

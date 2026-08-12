@@ -1,3 +1,9 @@
+"""수집 원문을 정규화하고 LangChain 청크로 나누는 순수 텍스트 처리 모듈입니다.
+
+``app.ingestion.service``가 임베딩 직전에 호출하며, DB·네트워크 연결에는 의존하지
+않아 단위 테스트하기 쉬운 계층입니다.
+"""
+
 from __future__ import annotations
 
 import re

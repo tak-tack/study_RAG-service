@@ -1,4 +1,7 @@
-"""Rename ingestion logs and record execution type and API name."""
+"""[과거 로컬 프로토타입] 실행 로그의 현재 이름·식별 컬럼으로 전환한 이력입니다.
+
+외부 DB는 이 리비전으로 stamp한 뒤 0006에서 실제 테이블을 생성합니다.
+"""
 
 import sqlalchemy as sa
 

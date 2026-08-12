@@ -1,3 +1,10 @@
+"""Alembic 실행 환경입니다.
+
+``app.core.config``의 외부 DB 연결값과 ``app.db.models`` 메타데이터를 결합해
+마이그레이션을 실행합니다. 공용 ``chatbot`` 스키마와 충돌하지 않도록 전용 이력
+테이블 ``takhyeong_saving_alembic_version``을 사용합니다.
+"""
+
 from __future__ import annotations
 
 from logging.config import fileConfig

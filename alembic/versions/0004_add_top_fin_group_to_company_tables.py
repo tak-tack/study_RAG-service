@@ -1,4 +1,8 @@
-"""Store Finlife topFinGrpNo on company records and vector chunks."""
+"""[과거 로컬 프로토타입] 권역 코드를 기존 회사·청크 테이블에 추가한 이력입니다.
+
+로컬 기존 데이터를 삭제하는 작업이 포함되어 외부 DB에는 실행하지 않습니다.
+현재 테이블에는 0006이 ``top_fin_grp_no``를 처음부터 포함해 생성합니다.
+"""
 
 import sqlalchemy as sa
 

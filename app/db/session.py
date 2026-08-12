@@ -1,3 +1,9 @@
+"""PostgreSQL 연결 엔진과 ORM 세션 팩토리입니다.
+
+``app.core.config``의 DB URL로 연결하며, pgvector 확장 스키마를 검색 경로에
+추가합니다. 배치 작업과 수집 서비스가 ``SessionLocal``을 통해 사용합니다.
+"""
+
 from sqlalchemy import create_engine, event
 from sqlalchemy.orm import Session, sessionmaker
 

@@ -1,3 +1,6 @@
+# Windows 작업 스케줄러에 Finlife 동기화 배치를 등록하는 스크립트입니다.
+# ``.venv-win``의 Python으로 ``app.jobs.finlife_company_sync``를 매일 실행하며,
+# 실행 결과는 DB의 ``takhyeong_saving_log``에 ``scheduled`` 유형으로 기록됩니다.
 param(
     [string]$TaskName = "StudyRag-FinlifeCompanySync",
     [string]$StartAt = "03:00"

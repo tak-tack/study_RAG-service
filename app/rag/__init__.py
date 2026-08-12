@@ -1,1 +1,5 @@
-"""Reserved for future context assembly and generation orchestration."""
+"""향후 RAG 컨텍스트 조립과 LLM 생성 오케스트레이션을 둘 패키지입니다.
+
+향후 ``app.retrieval``의 벡터 검색 결과를 받아 ``app.main``의 질의 API와 연결할
+예정이며, 현재는 구현되지 않았습니다.
+"""
