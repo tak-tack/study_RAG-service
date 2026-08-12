@@ -1,6 +1,6 @@
-"""수동·스케줄 수집 실행 이력을 ``takhyeong_saving_log``에 매핑합니다.
+"""NiFi 수집 실행 이력을 ``takhyeong_saving_log``에 매핑합니다.
 
-``app.jobs.finlife_company_sync``가 시작·성공·실패 상태와 처리 건수를 기록합니다.
+``app.api.nifi``가 API 정보와 시작·성공·실패 상태, 실제 변경 처리 건수를 기록합니다.
 """
 
 from datetime import datetime
@@ -12,7 +12,7 @@ from app.db.base import Base
 
 
 class SavingLog(Base):
-    """Audit record for a manual or scheduled Finlife synchronization."""
+    """NiFi가 전달한 Finlife 적재 요청의 감사 로그입니다."""
 
     __tablename__ = "takhyeong_saving_log"
 

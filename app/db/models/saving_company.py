@@ -1,7 +1,7 @@
 """금감원 금융회사 원본 데이터를 ``takhyeong_saving_company``에 매핑합니다.
 
-``app.ingestion.service``가 회사 정보를 upsert하며, 청크 모델과 ``company_id``로
-연결됩니다. 스키마는 Alembic의 현재 마이그레이션(0006)이 생성합니다.
+``app.ingestion.service``가 회사 정보를 upsert하며, 원본 필드를 직접 비교해 실제 변경
+여부를 판단합니다. 청크 모델과 ``company_id``로 연결되며 스키마는 Alembic이 관리합니다.
 """
 
 from datetime import datetime
