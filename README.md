@@ -8,6 +8,35 @@ NiFi가 금융감독원 API를 호출해 전달한 회사 정보를 텍스트 �
 
 ## 실행 준비
 
+## Docker로 실행
+
+Docker Desktop과 Ollama를 실행한 뒤 아래 명령으로 API를 기동합니다. `.env`의
+`DATABASE_URL`은 사용할 외부 PostgreSQL 주소로 설정해야 합니다.
+
+```bash
+cp .env.example .env
+ollama pull bge-m3
+docker compose up --build -d api
+docker compose --profile tools run --rm migrate
+```
+
+개발 중에는 소스가 컨테이너에 마운트되어 있어 저장 시 FastAPI가 자동 재시작됩니다.
+`http://localhost:8000/docs` 또는 `http://localhost:8000/health`로 확인할 수 있습니다.
+
+Ollama를 호스트에서 실행하는 구성입니다. Windows/macOS Docker Desktop에서는 기본값을
+그대로 사용하면 되고, Linux에서는 `host.docker.internal` 매핑도 Compose에 포함되어 있습니다.
+
+중지하려면 `docker compose down`을 실행합니다. 로컬 PostgreSQL이 정말 필요한 경우에만
+`docker compose --profile local-db up -d postgres`를 실행하세요.
+
+### 명령 요약
+
+```bash
+docker compose logs -f api
+docker compose ps
+docker compose restart api
+```
+
 1. `.env.example`을 `.env`로 복사하고 필요하면 값을 변경합니다.
 2. pgvector가 포함된 PostgreSQL을 실행합니다: `docker compose up -d postgres`.
 3. Python 3.11+ 가상 환경을 만들고 프로젝트를 설치합니다: `pip install -e '.[dev]'`.

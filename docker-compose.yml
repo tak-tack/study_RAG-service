@@ -2,7 +2,33 @@
 # 운영에서는 사용하지 않으며, 애플리케이션은 ``.env``의 DATABASE_URL을 통해
 # 외부 ``chatbot`` 스키마 DB 또는 이 로컬 컨테이너에 연결합니다.
 services:
+  api:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?Set DATABASE_URL in .env}
+      OLLAMA_BASE_URL: ${DOCKER_OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-bge-m3}
+      EMBEDDING_DIMENSIONS: ${EMBEDDING_DIMENSIONS:-1024}
+      NIFI_INGEST_API_KEY: ${NIFI_INGEST_API_KEY:-}
+    volumes:
+      - ./:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  migrate:
+    build:
+      context: .
+    profiles: ["tools"]
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?Set DATABASE_URL in .env}
+    command: alembic upgrade head
+
   postgres:
+    profiles: ["local-db"]
     image: pgvector/pgvector:pg16
     environment:
       POSTGRES_DB: rag
@@ -12,6 +38,11 @@ services:
       - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d rag"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
   postgres-data:
