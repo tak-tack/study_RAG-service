@@ -8,9 +8,11 @@
 from fastapi import FastAPI
 
 from app.api.nifi import router as nifi_router
+from app.api.search import router as search_router
 
 app = FastAPI(title="Study RAG Service", version="0.1.0")
 app.include_router(nifi_router)
+app.include_router(search_router)
 
 
 @app.get("/health", tags=["operations"])
